@@ -1,124 +1,139 @@
-🛡️ KAVACH — Vehicle-to-Pedestrian Safety System Simulation
+♻️ EcoReport — Plastic Waste Reporting Platform
 
-A real-time visual simulation exploring low-latency Vehicle-to-Pedestrian (V2P) communication using edge computing concepts.
+Report Plastic Waste. Support Cleaner Communities.
 
-KAVACH demonstrates how a vehicle could detect a pedestrian, assess collision risk and deliver a safety alert through a simulated pipeline involving an on-vehicle controller, Multi-access Edge Computing (MEC) and 5G communication concepts.
+EcoReport is a web-based plastic waste reporting platform designed to help citizens report plastic waste in their surroundings and support better waste management. The platform provides a user interface for submitting reports, capturing photos, and supporting collaboration between citizens, municipal authorities, and recycling plants.
 
-The project focuses on the importance of low-latency processing in road safety scenarios.
+🌍 Overview
 
-🚦 Overview
+Plastic waste is a major environmental challenge. EcoReport explores how a digital platform can make waste reporting more accessible and help connect citizens with waste management stakeholders.
 
-At high vehicle speeds, even small delays can affect the time available to respond to a potential collision. KAVACH visualises a proposed safety architecture that combines local risk assessment with edge-assisted communication.
-
-The simulation illustrates the following workflow:
-
-Detect → Decide → Process → Alert
-
-1. Radar detection: Represents a 77 GHz millimetre-wave radar detecting a pedestrian.
-2. On-vehicle processing: Illustrates collision-risk assessment using Time-to-Collision (TTC).
-3. Edge processing: Demonstrates a conceptual MEC stage with priority safety messaging, geographic filtering and message time-to-live (TTL) enforcement.
-4. Pedestrian alert: Visualises the delivery of a warning to a pedestrian.
+The application provides an interface for user authentication, profile registration, camera-based photo capture, and different account types for participating in waste management activities.
 
 ✨ Features
 
-- 🎬 Animated, time-sequenced safety simulation.
-- 🚗 Vehicle movement and pedestrian detection visualisation.
-- 📡 Conceptual millimetre-wave radar detection.
-- ⏱️ TTC and end-to-end latency displays.
-- ⚡ Visualisation of on-vehicle processing and edge computing.
-- 📱 Simulated pedestrian warning interface.
-- 📊 Animated system pipeline with processing stages.
-- 🔄 Replay functionality for repeated demonstrations.
-- 🌌 Dark, futuristic dashboard with animated indicators.
-- 📱 Responsive adjustments for different screen sizes.
+- ♻️ Plastic Waste Reporting: Interface designed for reporting plastic waste.
+- 📸 Camera Integration: Capture photos directly from a device camera.
+- 🖼️ Photo Preview: Review captured images before using them.
+- 🔐 Authentication Interface: Email OTP and ID/password login options.
+- 👤 User Profiles: Collect profile details such as name, phone number and city.
+- 🏛️ Multiple User Roles: Citizen, Municipality Admin and Recycling Plant.
+- 🔥 Firebase Integration: Firebase Authentication, Cloud Firestore and Cloud Storage libraries.
+- 📱 Responsive UI: Mobile-oriented layout with interactive controls.
+- 🔔 Toast Notifications: Visual feedback for success, error and information messages.
+- 🎨 Modern Interface: Tailwind CSS styling and Font Awesome icons.
 
-🏗️ System Architecture
+🛠️ Technologies Used
 
-Vehicle Radar
-     |
-     v
-On-Vehicle MCU
-(TTC / Risk Assessment)
-     |
-     v
-MEC / Edge Processing
-(Priority / Geo-Filtering / TTL)
-     |
-     v
-Pedestrian Alert
-(Conceptual 5G Communication)
+Technology| Purpose
+HTML5| Application structure
+CSS3| Custom styling, animations and camera overlays
+JavaScript| Client-side interactions
+Tailwind CSS| Utility-based styling
+Firebase Authentication| Authentication integration
+Cloud Firestore| Database integration
+Firebase Storage| Potential storage for uploaded report images
+Font Awesome| Icons
+Browser Media APIs| Camera access and photo capture
 
-The simulation separates local risk assessment from the conceptual network communication stage to demonstrate the role edge computing could play in safety-critical applications.
+👥 User Roles
 
-🧰 Technologies Used
+1. Citizen
 
-- HTML5 — Page structure and simulation components.
-- CSS3 — Layout, animations, visual effects and responsive styling.
-- JavaScript — Simulation timeline, UI state changes, latency animation and replay logic.
-- Google Fonts (Inter) — Typography.
+- Register and manage a profile.
+- Capture photos of plastic waste.
+- Participate in local waste reporting.
 
-The current implementation runs in a web browser and does not require a backend server or JavaScript framework.
+2. Municipality Admin
 
-▶️ How to Run
+- Intended for municipal personnel involved in waste management.
+- Designed to support the handling of citizen reports.
 
-Option 1: Open directly
+3. Recycling Plant
 
-1. Download or clone this repository.
-2. Open "index.html" in a modern web browser.
-3. Click BEGIN SIMULATION.
-4. Observe the detection, processing and alert stages.
-5. Click REPLAY after the summary screen to run the demonstration again.
+- Intended for recycling organisations.
+- Designed to support participation in plastic waste collection and recycling.
 
-Option 2: Run using a local server
+Role-specific permissions and workflows require appropriate implementation and backend access controls.
 
-If Python is installed, open a terminal in the project directory:
+📸 Camera and Photo Workflow
 
-python -m http.server 8000
+The interface provides a camera experience designed around the following steps:
 
-Open the following address in your browser:
+1. Open the camera.
+2. Capture a photo of the reported waste.
+3. Preview the captured image.
+4. Retake the photo or confirm it for use.
 
-http://localhost:8000
+The browser may request camera permission. Camera access generally requires HTTPS or a localhost development environment.
 
-📁 Project Structure
+🔐 Authentication
 
-KAVACH/
-├── index.html
-└── README.md
+The application interface includes two login methods:
 
-The HTML file contains the page structure, CSS styling and JavaScript simulation logic.
+- Email OTP: Enter an email address and a six-digit verification code.
+- ID & Password: Sign in using an account identifier and password.
 
-🎯 Applications and Motivation
+Firebase Authentication libraries are included in the project. A production deployment must configure Firebase properly and implement secure verification, session handling, error handling and any required authentication provider setup.
 
-KAVACH explores concepts relevant to:
+🚀 Getting Started
 
-- Vehicle-to-Pedestrian (V2P) safety.
-- Intelligent Transportation Systems (ITS).
-- Edge computing and low-latency communication.
-- Collision-risk assessment.
-- Human-centred road safety technologies.
+Prerequisites
 
-The project is intended as an educational demonstration of how these concepts could fit together in a road-safety architecture.
+- A modern web browser.
+- A code editor such as Visual Studio Code.
+- A Firebase project if you want to enable Firebase-backed functionality.
 
-⚠️ Limitations
+Installation
 
-KAVACH is a simulation and not a deployed road-safety system.
+1. Clone the repository:
+   
+   git clone https://github.com/aditya-raj149/plasticcop.git
 
-- Radar measurements and pedestrian detection are visually simulated.
-- TTC and risk levels are illustrative rather than derived from live sensor measurements.
-- MEC processing and 5G communication are represented through animations, not actual network infrastructure.
-- The displayed 28 ms end-to-end latency is a configured demonstration value, not a measured benchmark.
-- No real pedestrian smartphone notifications or vehicle-control operations are performed.
+2. Navigate to the project directory:
+   
+   cd plasticcop
 
-Real-world deployment would require hardware integration, validated collision-prediction algorithms, reliable communications, security safeguards and extensive safety testing.
+3. Open the HTML file in Visual Studio Code.
 
-🔮 Future Improvements
+4. Run the application through a local development server. For example:
+   
+   python -m http.server 8000
 
-- Integrate a real-time pedestrian detection model using computer vision.
-- Add a mathematical TTC calculation based on relative distance and velocity.
-- Build a backend for exchanging vehicle and pedestrian messages.
-- Simulate network latency, packet loss and message prioritisation.
-- Add a configurable speed, distance and latency interface.
-- Explore V2X communication protocols and edge-computing integration.
+5. Open "http://localhost:8000" in your browser.
+
+Note: Update the repository URL and HTML filename if your project uses a different repository or file structure.
+
+🔥 Firebase Configuration
+
+Before enabling Firebase features:
+
+1. Create a Firebase project.
+2. Register a web application in the Firebase console.
+3. Configure the Firebase SDK using your project's configuration.
+4. Enable the required authentication methods.
+5. Configure Cloud Firestore and Firebase Storage.
+6. Set secure Firestore and Storage rules.
+7. Test authentication, report submission and image upload flows.
+
+Never place Firebase Admin credentials or service account private keys in frontend code. Protect user data and validate permissions on the backend.
+
+🔮 Future Enhancements
+
+- 📍 GPS-based location tagging for waste reports.
+- 🗺️ Map-based display of reported plastic waste.
+- 🧠 AI-based plastic waste classification from uploaded images.
+- 📊 Municipal dashboard for managing and verifying reports.
+- 🚛 Waste collection status tracking.
+- ♻️ Recycling plant coordination and collection records.
+- 🔔 Notifications when report statuses change.
+- 📈 Environmental impact statistics and reporting analytics.
+
+⚠️ Project Status
+
+EcoReport is a web application project with a frontend interface and Firebase SDK integration.
+
+The availability of working authentication, persistent report storage, image uploads, role-based dashboards and waste collection workflows depends on the corresponding JavaScript logic, Firebase configuration and security rules being implemented.
 
 👨‍💻 Author
 
@@ -129,4 +144,4 @@ B.Tech — Artificial Intelligence and Data Science, IIIT Manipur
 
 📄 License
 
-Choose an appropriate open-source license before distributing or reusing the project. For example, the MIT License may be suitable if you want to allow reuse with attribution.
+Choose and add an open-source license to the repository if you intend to distribute the project publicly. The MIT License is one possible option.
